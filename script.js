@@ -37,6 +37,96 @@
 		//When a certain method (or property) is called, the search starts in the object's prototype.This continues until the method is found: prototype chain.
 		
 
+/////////////////////////////////////////
+// Function Constructor 
+
+
+	function Person(name, yearOfBirth, job){
+		this.name = name;
+		this. yearOfBirth = yearOfBirth;
+		this.job = job;
+
+	};
+
+	Person.prototype.calculateAge = function(){
+		console.log(2018 - this.yearOfBirth);
+	}
+
+	var nicole = new Person('Nicole', 1989, 'Developer');
+
+	nicole.calculateAge();
+
+
+	//the new operator
+		//the new operator creates a new empty object 
+		//after that the constructor function in this case Person is called with its arguments 
+		//calling a new function creates a new execution context that also has a this variable 
+		// the new operator makes it so that the this variable points to the empty function that is created 
+
+	//We need to add all methods and properties we want inherited into the constructors prototype property 
+
+
+
+	function Cat(name, yearOfBirth, color, size){
+		this.name = name
+		this.yearOfBirth = yearOfBirth;
+		this.color = color;
+		this.size = size;
+
+	}
+
+	var d = new Date();
+
+	Cat.prototype.calculateAge = function(){
+		console.log(calculateAge = d.getFullYear() - this.yearOfBirth)
+	}
+
+
+	var cocoa = new Cat('Cocoa', 2010, 'brown', 'small');
+	var cloud = new Cat('Cloud', 2013, 'white and black', 'big');
+	var zues = new Cat('Zues', 2015, 'white and black', 'medium');
+	var rain = new Cat('Rain', 2016, 'black', 'medium');
+
+	cocoa.calculateAge();
+	cloud.calculateAge();
+	zues.calculateAge();
+	rain.calculateAge();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
