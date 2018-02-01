@@ -3,7 +3,7 @@
 
 	//ALMOST EVERYTHING IS A OBJECT
 
-	//to types of vales PRIMATIVES and OBJECTS
+	//two types of values PRIMATIVES and OBJECTS
 
 	//primatives are
 		//numbers, strings,booleans, undifined, null
@@ -41,20 +41,20 @@
 // Function Constructor 
 
 
-	function Person(name, yearOfBirth, job){
-		this.name = name;
-		this. yearOfBirth = yearOfBirth;
-		this.job = job;
+	// function Person(name, yearOfBirth, job){
+	// 	this.name = name;
+	// 	this. yearOfBirth = yearOfBirth;
+	// 	this.job = job;
 
-	};
+	// };
 
-	Person.prototype.calculateAge = function(){
-		console.log(2018 - this.yearOfBirth);
-	}
+	// Person.prototype.calculateAge = function(){
+	// 	console.log(2018 - this.yearOfBirth);
+	// }
 
-	var nicole = new Person('Nicole', 1989, 'Developer');
+	// var nicole = new Person('Nicole', 1989, 'Developer');
 
-	nicole.calculateAge();
+	// nicole.calculateAge();
 
 
 	//the new operator
@@ -67,30 +67,77 @@
 
 
 
-	function Cat(name, yearOfBirth, color, size){
-		this.name = name
-		this.yearOfBirth = yearOfBirth;
-		this.color = color;
-		this.size = size;
+	// function Cat(name, yearOfBirth, color, size){
+	// 	this.name = name
+	// 	this.yearOfBirth = yearOfBirth;
+	// 	this.color = color;
+	// 	this.size = size;
 
-	}
+	// }
 
+	// var d = new Date();
+
+	// Cat.prototype.calculateAge = function(){
+	// 	console.log(calculateAge = d.getFullYear() - this.yearOfBirth)
+	// }
+
+
+	// var cocoa = new Cat('Cocoa', 2010, 'brown', 'small');
+	// var cloud = new Cat('Cloud', 2013, 'white and black', 'big');
+	// var zues = new Cat('Zues', 2015, 'white and black', 'medium');
+	// var rain = new Cat('Rain', 2016, 'black', 'medium');
+
+	// cocoa.calculateAge();
+	// cloud.calculateAge();
+	// zues.calculateAge();
+	// rain.calculateAge();
+
+///////////////////////////////////////////////////
+//Prototype Chain in the Console 
+	
+
+	//We can use the console to inspect ojects
+	//we can also see the proto in the objects
+	//in our case we can see prototype property of the Cat constructor 
+	//cocoa.__proto__ === Cat.prototype
+	//true
+	//each object is also an instance of the object object 
+	//in the conslole you can visulalize the whole prototype chain.
+	// you can also see the methods that you can use off the object object 
+
+	// ex.
+	//cocoa.hasOwnProperty('size');
+
+	//to prove everything is an obect add this to the console
+	// var x = [1,2,3,4];
+	// console.log(x);
+	//you see the length property 
+	//a __proto__ option is reviled
+	//all the methods available in an array object are also shown  
+
+
+////////////////////////////////////////////
+//Create Objects: Object.Create
+
+	//this lecture will show another way to create a object that inherit from a prototype 
+	//that is the object.create method
+	
+	//this is case we will first define an object that will act as a prototype and then create a new object based on that very prototype 
+
+	//First we have write the prototype as a simple object
+	
 	var d = new Date();
 
-	Cat.prototype.calculateAge = function(){
-		console.log(calculateAge = d.getFullYear() - this.yearOfBirth)
-	}
+	var catProto = {
+		calculateAge: function(){
+		console.log( calculateAge = d.getFullYear - this.yearOfBirth);
+		}
+	}	
+
+	var cocoa = Object.create(catProto);
 
 
-	var cocoa = new Cat('Cocoa', 2010, 'brown', 'small');
-	var cloud = new Cat('Cloud', 2013, 'white and black', 'big');
-	var zues = new Cat('Zues', 2015, 'white and black', 'medium');
-	var rain = new Cat('Rain', 2016, 'black', 'medium');
 
-	cocoa.calculateAge();
-	cloud.calculateAge();
-	zues.calculateAge();
-	rain.calculateAge();
 
 
 
